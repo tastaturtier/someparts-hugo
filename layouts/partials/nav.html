@@ -1,0 +1,37 @@
+<header>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top border-bottom border-warning">
+    <ul class="navbar-nav">
+      <li class="nav-item dropdown">
+        {{ if .Site.Params.Dropdown }}
+        <a class="navbar-brand dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          {{ .Site.Params.title }}
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          {{ range .Site.Params.Dropdown }}
+          {{ if and .url .linktext }}
+          <a class="dropdown-item" href="{{ .url }}">{{ .linktext }}</a>
+          {{ else }}
+          <div class="dropdown-divider"></div>
+          {{ end }}
+          {{ end }}
+        </div>
+        {{ else }}
+        <span class="navbar-brand">{{ .Site.Params.title }}</span>
+        {{ end }}
+      </li>
+    </ul>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav">
+        {{ $currentPage := . }}
+        {{ range (where site.Pages "Type" "in" "part").ByWeight }}
+        <li class='nav-item{{ if eq $currentPage.RelPermalink .RelPermalink }} active {{ end }}'>
+          <a class="nav-link" href="{{ .Permalink }}">{{ with .Site.Params.Icon }}{{ . | safeHTML }}&nbsp;{{ end }}{{ .Params.id }}</a>
+        </li>
+        {{ end }}
+      </ul>
+    </div>
+  </nav>
+</header>

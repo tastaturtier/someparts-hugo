@@ -1,0 +1,81 @@
+
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      {{ hugo.Generator }}
+      {{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
+      {{ with .Site.Params.description }}<meta name="description" content="{{ . }}">{{ end }}
+      {{ with .OutputFormats.Get "rss" -}}{{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}{{ end -}}
+      <link rel="stylesheet" href="/css/bootstrap.min.css" />
+      <script src="/js/jquery.min.js"></script>
+      <script src="/js/popper.min.js"></script>
+      <script src="/js/bootstrap.min.js"></script>
+      <link rel="stylesheet" href="/css/font-awesome.min.css">
+      {{ if .IsHome }}{{ $homepage := "Home" }}<title>{{ .Site.Params.Title }}</title>{{ else }}<title>{{ .Title }} | {{ .Site.Params.Title }}</title>{{ end }}
+      <style>
+        article {
+          padding-top: 80px;
+          padding-bottom: 1ex;
+        }
+        @media print {
+          .custom-navbar {
+            display: none;
+          }
+        }
+        img {
+          max-width: 100%;
+        }
+      </style>
+{{ if not .Site.IsServer }}
+{{ if .Site.Params.googleAnalytics }}<link rel="stylesheet" type="text/css" href="/css/cookieconsent.min.css" />
+<script src="/js/cookieconsent.min.js"></script>
+<script>
+function loadGAonConsent(){
+  window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '{{ .Site.Params.googleAnalytics }}', { 
+      'cookie_domain': 'auto',
+      'cookie_expires': 7 * 26 * 24 * 60 * 60, 
+      'anonymize_ip': true 
+    });
+  var gascript = document.createElement("script");
+  gascript.async = true;
+  gascript.src = "https://www.googletagmanager.com/gtag/js?id={{ .Site.Params.googleAnalytics }}";
+  document.getElementsByTagName("head")[0].appendChild(gascript, document.getElementsByTagName("head")[0]);               
+}
+ 
+if (document.cookie.split(';').filter(function(item) {
+    return item.indexOf('cookieconsent_status=allow') >= 0
+}).length) {
+    loadGAonConsent();
+}
+window.addEventListener("load", function(){
+	window.cookieconsent.initialise({
+		"palette": {
+		"popup": { "background": "#000"},
+		"button": { "background": "#f1d600"}
+		},
+		"theme": "classic",
+		"type": "opt-in",
+		"content": {
+		"message": "{{ .Site.Params.cookieconsent.message }}",
+		"deny": "{{ .Site.Params.cookieconsent.denyLabel }}",
+		"allow": "{{ .Site.Params.cookieconsent.allowLabel }}",
+		"link": "{{ .Site.Params.cookieconsent.policy.linktext }}",
+		"href": "{{ .Site.Params.cookieconsent.policy.url }}"
+		},
+		onStatusChange: function(status, chosenBefore) {
+		var type = this.options.type;
+		var didConsent = this.hasConsented();
+		if (type == 'opt-in' && didConsent) {
+		// enable cookies
+		loadGAonConsent();
+		}
+		}
+	})
+});
+</script>
+{{ end }}
+{{ end }}
+    </head>

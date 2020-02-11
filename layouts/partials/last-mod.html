@@ -1,0 +1,8 @@
+{{ if .Site.Params.lastmod }}
+<div class="container">
+  <div class="row border-top">
+    <div class="col-sm-8"></div>
+    <div class="col-sm-4"><p class="text-right">{{ .Site.Params.lastmod | markdownify}}: {{ .Lastmod.Format "02 Jan 2006" | safeHTML }}</p></div>
+  </div>
+</div>
+{{ end }}

@@ -1,0 +1,6 @@
+<!doctype html>
+  {{ with .Site.Params.lang }}<html lang="{{ . }}">{{ end }}{{ partial "head.html" . }}
+    <body>{{ partial "nav.html" . }}
+      <article class="container">{{ block "main" . }}{{ end }}</article>{{ partial "last-mod.html" . }}
+    </body>
+</html>

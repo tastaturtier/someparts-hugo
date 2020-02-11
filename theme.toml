@@ -1,0 +1,21 @@
+# theme.toml template for a Hugo theme
+# see https://github.com/gohugoio/hugoThemes#themetoml 
+
+name = "someparts-hugo"
+license = "MIT"
+licenselink = "https://github.com/tastaturtier/someparts-hugo/blob/master/LICENSE.txt"
+description = "Minimalistic Hugo theme for some parts"
+homepage = "https://github.com/tastaturtier/someparts-hugo"
+tags = ["Responsive", "Bootstrap", "Fontawesome", "Minimalist", "Simple", "Google Analytics", "Projects", "Product"]
+features = ["Responsive", "Google Analytics", "GDPR Compliance"]
+min_version = "0.63.2"
+
+[author]
+  name = "Sandro Leuchter"
+  homepage = "https://dama.io/"
+
+[original]
+    author = "Zachary Betz"
+    homepage = "https://zwbetz.com/"
+    repo = "https://github.com/zwbetz-gh/minimal-bootstrap-hugo-theme.git"
+
