@@ -40,10 +40,6 @@ hugo server --themesDir ../..
 
 Copy the `config.toml` from the [`exampleSite`](https://github.com/tastaturtier/someparts-hugo/tree/master/exampleSite), then edit as desired.
 
-## Favicons
-
-Upload your image to [RealFaviconGenerator](https://realfavicongenerator.net/) then copy-paste the generated favicon files under `static`. 
-
 ## Override
 
 The ``someparts-hugo``-Theme is made to present parts of a collection. The [`exampleSite`](https://github.com/tastaturtier/someparts-hugo/tree/master/exampleSite) has some colors as part of a palette. The actual usecase ``someparts-hugo`` was made is to present volumes of a book series. It would be easily possible to make it chapters of a book instead.
@@ -51,6 +47,8 @@ The ``someparts-hugo``-Theme is made to present parts of a collection. The [`exa
 ## Part (e.g. ``/orange/_index.md``)
 ### Icon in front of part-elements
 ## Ressource (e.g. ``/orange/something.md``)
+``_default`` (``single.html``)
 ## The Collection (``/_index.md``)
+``_default`` (``list.html``)
 ## Menu (Drop Down)
 ## Cookie Consent / Google Analytics

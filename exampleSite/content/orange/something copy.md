@@ -1,5 +1,4 @@
 ---
-type: resource
 title: Even more thoughts on oranges
 weight: 2
 ---
