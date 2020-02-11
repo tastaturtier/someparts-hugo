@@ -1,2 +1,2 @@
 # someparts-hugo
-Minimalistic Hugo theme for some parts
+Minimalistic Hugo theme to present some parts of a collection.
