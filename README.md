@@ -6,7 +6,7 @@ Minimalistic Hugo theme to present some parts of a collection.
 
 ## Demo
 
-https://TBD.netlify.com/
+https://someparts-hugo.netlify.com/
 
 ## Minimum Hugo version
 
