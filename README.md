@@ -1,4 +1,6 @@
 # someparts-hugo
+[![Netlify Status](https://api.netlify.com/api/v1/badges/821a1731-748a-41f8-bf0e-4637873a4aa9/deploy-status)](https://app.netlify.com/sites/someparts-hugo/deploys)
+
 Minimalistic Hugo theme to present some parts of a collection.
 
 ## Demo

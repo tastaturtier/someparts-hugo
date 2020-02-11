@@ -1,5 +1,5 @@
 theme: someparts-hugo
-baseURL: https://example.com/
+baseURL: https://someparts-hugo.netlify.com/
 copyright: CC BY-NC-SA 4.0 international
 enableGitInfo: true
 disableKinds:
