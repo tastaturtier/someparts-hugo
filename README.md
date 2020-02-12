@@ -15,7 +15,7 @@ Easy to use [Hugo](https://gohugo.io/) theme to present *some parts* of a collec
 - [Configuration](#configuration)
     - [The Collection (``/_index.md``)](#the-collection-_indexmd)
     - [Menu (Drop Down)](#menu-drop-down)
-    - [Icon in front of part-elements](#icon-in-front-of-part-elements)
+    - [Icon in front of parts](#icon-in-front-of-parts)
     - [Part (e.g. ``/orange/_index.md``, ``/blue.md``)](#part-eg-orange_indexmd-bluemd)
     - [Ressource (e.g. ``/orange/something.md``)](#ressource-eg-orangesomethingmd)
 - [Third party elements and GDPR compliance](#third-party-elements-and-gdpr-compliance)
@@ -75,7 +75,6 @@ The following predefined front matter variables are suported:
 
 - **``title``**: will be displayed as headline
 - **``aliases``** [*optional*] *(format: path)*: different paths to this page (will produce redirects)
-
 - **``date``** [*optional*], **``lastmod``** [*optional*], **``publishDate``** [*optional*] *(format: ``2019-12-31``)*: will be used as the last modification date which is displayed at the bottom of this page. There are rules how the lastmodified date is derived. The rules proposed in the [``exampleSite/config.yaml``](exampleSite/config.yaml) state that if ``date`` metadata is set in front matter this will be the lastmodified date. If it is not provided, then information from the git configuration management system is used instead.
 
 ```
@@ -120,7 +119,6 @@ disableKinds:
   - taxonomyTerm
   - categories
 ```
-
 ### Menu (Drop Down)
 
 The navigation bar at the top of each page displays always all the parts. If a part's page is shown the corresponding navigation bar element is shown activated.
@@ -156,13 +154,25 @@ The list of entries under dropdown will be used to construct te dropdown menu. E
 
 If the ``params.dropdown``  list is not set then the site tile will have a link to the home page (``/index.html``).
 
-### Icon in front of part-elements
+### Icon in front of parts
 
 The ``someparts-hugo``-Theme is made to present parts of a collection. The [`exampleSite`](https://github.com/tastaturtier/someparts-hugo/tree/master/exampleSite) has some colors as part of a palette. The actual usecase for which ``someparts-hugo`` was made is to [present volumes of a book series](https://verteiltearchitekturen.de/). It would be easy to adapt it to chapters of a book instead.
 
+Set ``params.icon`` in the ``config.yaml`` (or ``.toml`` or ``.json``) of your site if you want an icon in front of each  part's id (in the menu and the list of parts on the home page):
 
+```
+params.icon: <i class="fa fa-paint-brush" aria-hidden="true"></i>
+```
+
+The [Font Awesome fonts](https://fontawesome.com/) are already included in the ``someparts-hugo``-theme. There is a searchable list of icons at: https://fontawesome.com/icons?d=gallery.
+
+If ``params.icon`` is not set, then no icon will be displayed in front of each  part's id (in the menu and the list of parts on the home page).
 
 ### Part (e.g. ``/orange/_index.md``, ``/blue.md``)
+
+``hugo new --kind part foo`` 
+
+creates a new bundle in the directory ``foo/`` with a ``_index.md`` 
 
 Parts 
 
