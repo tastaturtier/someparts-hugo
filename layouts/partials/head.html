@@ -6,11 +6,11 @@
       {{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
       {{ with .Site.Params.description }}<meta name="description" content="{{ . }}">{{ end }}
       {{ with .OutputFormats.Get "rss" -}}{{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}{{ end -}}
-      <link rel="stylesheet" href="/css/bootstrap.min.css" />
-      <script src="/js/jquery.min.js"></script>
-      <script src="/js/popper.min.js"></script>
-      <script src="/js/bootstrap.min.js"></script>
-      <link rel="stylesheet" href="/css/font-awesome.min.css">
+      <link rel="stylesheet" href='{{ "/css/bootstrap.min.css" | absURL }}' />
+      <script src='{{ "/js/jquery.min.js" | absURL }}'></script>
+      <script src='{{ "/js/popper.min.js" | absURL }}'></script>
+      <script src='{{ "/js/bootstrap.min.js" | absURL }}'></script>
+      <link rel="stylesheet" href='{{ "/css/font-awesome.min.css" | absURL }}'>
       {{ if .IsHome }}{{ $homepage := "Home" }}<title>{{ .Site.Params.Title }}</title>{{ else }}<title>{{ .Title }} | {{ .Site.Params.Title }}</title>{{ end }}
       <style>
         article {
@@ -27,8 +27,8 @@
         }
       </style>
 {{ if not .Site.IsServer }}
-{{ if .Site.Params.googleAnalytics }}<link rel="stylesheet" type="text/css" href="/css/cookieconsent.min.css" />
-<script src="/js/cookieconsent.min.js"></script>
+{{ if .Site.Params.googleAnalytics }}<link rel="stylesheet" type="text/css" href='{{ "/css/cookieconsent.min.css" | absURL }}' />
+<script src='{{ "/js/cookieconsent.min.js" | absURL }}'></script>
 <script>
 function loadGAonConsent(){
   window.dataLayer = window.dataLayer || [];
