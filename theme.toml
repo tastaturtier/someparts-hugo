@@ -4,7 +4,7 @@
 name = "someparts-hugo"
 license = "MIT"
 licenselink = "https://github.com/tastaturtier/someparts-hugo/blob/master/LICENSE.txt"
-description = "Minimalistic Hugo theme for some parts"
+description = "easy to use Hugo theme to present some (up to 10) parts of a collection"
 homepage = "https://github.com/tastaturtier/someparts-hugo"
 tags = ["Responsive", "Bootstrap", "Fontawesome", "Minimalist", "Simple", "Google Analytics", "Projects", "Product"]
 features = ["Responsive", "Google Analytics", "GDPR Compliance"]
