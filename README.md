@@ -4,7 +4,24 @@
 
 Easy to use [Hugo](https://gohugo.io/) theme to present *some parts* of a collection. It is constrained to a limited number of parts -- hence "some" in the name of this [Hugo](https://gohugo.io/) theme. Since the parts are presented in the menubar at the top of every page their number should be less than ten depending on their names (``id`` property).
 
-[_toc_]
+---
+
+## Overview
+- [Demos](#demos)
+- [Minimum Hugo version](#minimum-hugo-version)
+- [Installation of the ``someparts-hugo`` theme](#installation-of-the-someparts-hugo-theme)
+- [Updating](#updateing)
+- [Run example site](#run-example-site)
+- [Configuration](#configuration)
+    - [The Collection (``/_index.md``)](#the-collection-_indexmd)
+    - [Menu (Drop Down)](#menu-drop-down)
+    - [Icon in front of part-elements](#icon-in-front-of-part-elements)
+    - [Part (e.g. ``/orange/_index.md``, ``/blue.md``)](#part-eg-orange_indexmd-bluemd)
+    - [Ressource (e.g. ``/orange/something.md``)](#ressource-eg-orangesomethingmd)
+- [Third party elements and GDPR compliance](#third-party-elements-and-gdpr-compliance)
+    - [Cookie Consent / Google Analytics](#cookie-consent--google-analytics)
+
+---
 
 ## Demos
 
