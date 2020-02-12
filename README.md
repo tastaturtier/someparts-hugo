@@ -28,6 +28,8 @@ Easy to use [Hugo](https://gohugo.io/) theme to present *some parts* of a collec
 - https://someparts-hugo.netlify.com/
 - https://verteiltearchitekturen.de/
 
+The ``someparts-hugo``-Theme is made to present parts of a collection. The [`exampleSite`](https://github.com/tastaturtier/someparts-hugo/tree/master/exampleSite) has some colors as part of a palette. The actual usecase for which ``someparts-hugo`` was made is to [present volumes of a book series](https://verteiltearchitekturen.de/). It would be easy to adapt it to chapters of a book instead.
+
 ## Minimum Hugo version
 
 [Hugo](https://gohugo.io/) version `0.63.2` or higher is required. 
@@ -74,7 +76,7 @@ The following predefined front matter variables are suported:
 - **``title``**: will be displayed as headline
 - **``aliases``** [*optional*] *(format: path)*: different paths to this page (will produce redirects)
 
-- **``date``** [*optional*], ``lastmod``** [*optional*], ``publishDate``** [*optional*] *(format: ``2019-12-31``)*: will be used as the last modification date which is displayed at the bottom of this page. There are rules how the lastmodified date is derived. The rules proposed in the [``exampleSite/config.yaml``](exampleSite/config.yaml) state that if ``date`` metadata is set in front matter this will be the lastmodified date. If it is not provided, then information from the git configuration management system is used instead.
+- **``date``** [*optional*], **``lastmod``** [*optional*], **``publishDate``** [*optional*] *(format: ``2019-12-31``)*: will be used as the last modification date which is displayed at the bottom of this page. There are rules how the lastmodified date is derived. The rules proposed in the [``exampleSite/config.yaml``](exampleSite/config.yaml) state that if ``date`` metadata is set in front matter this will be the lastmodified date. If it is not provided, then information from the git configuration management system is used instead.
 
     frontmatter:
       lastmod: 
@@ -106,7 +108,7 @@ The following predefined front matter variables are not supported. Please avoid 
 - **``url``**
 - **``videos``**
 - **``weight``**
-- **``tags``**, **``categories``: tags and categories are currently not supported by the ``someparts-hugo``-theme. 
+- **``tags``**, **``categories``**: tags and categories are currently not supported by the ``someparts-hugo``-theme. 
 
 In order to deactivate tags and categories the following should be included in the ``config.yaml`` (or ``.toml`` or ``.json``) of your site:
 
@@ -117,10 +119,42 @@ In order to deactivate tags and categories the following should be included in t
 
 ### Menu (Drop Down)
 
+The navigation bar at the top of each page displays always all the parts. If a part's page is shown the corresponding navigation bar element is shown activated.
+
+On the left of the navigation bar is a special item. It displays the text that is configured under ``params.title`` in the ``config.yaml`` (or ``.toml`` or ``.json``) of your site. 
+
+If you want a dropdown menu under it configure it in the ``config.yaml`` (or ``.toml`` or ``.json``) of your site:
+
+    params:
+      dropdown: 
+        - entry1:
+          url: /
+          linktext: Overview
+        - divider2:
+        - entry3:
+          url: https://dama.io/
+          linktext: External Colorist
+        - divider4: 
+        - entry6:
+          url: /imprint/
+          linktext: Imprint
+        - entry7:
+          url: /privacy/
+          linktext: Privacy Policy
+        - divider8:
+        - entry9:
+          url: /index.xml
+          linktext: RSS
+
+The list of entries under dropdown will be used to construct te dropdown menu. Every entry that has no ``url`` or no ``linktext`` will be interpreted as an divider.
+
+If the ``params.dropdown``  list is not set then the site tile will have a link to the home page (``/index.html``).
 
 ### Icon in front of part-elements
 
 The ``someparts-hugo``-Theme is made to present parts of a collection. The [`exampleSite`](https://github.com/tastaturtier/someparts-hugo/tree/master/exampleSite) has some colors as part of a palette. The actual usecase for which ``someparts-hugo`` was made is to [present volumes of a book series](https://verteiltearchitekturen.de/). It would be easy to adapt it to chapters of a book instead.
+
+
 
 ### Part (e.g. ``/orange/_index.md``, ``/blue.md``)
 
@@ -170,7 +204,7 @@ The following of the predefined front matter variables are not supported:
 - **``videos``**
 - **``tags``**, **``categories``: tags and categories are currently not supported by the ``someparts-hugo``-theme. 
 
-In order to deactivate tags and categories the following should be included in the config.yaml (or toml or json) of your site:
+In order to deactivate tags and categories the following should be included in the ``config.yaml`` (or ``.toml`` or ``.json``) of your site:
 
     disableKinds:
     - taxonomy
