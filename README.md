@@ -4,6 +4,8 @@
 
 Easy to use [Hugo](https://gohugo.io/) theme to present *some parts* of a collection. It is constrained to a limited number of parts -- hence "some" in the name of this [Hugo](https://gohugo.io/) theme. Since the parts are presented in the menubar at the top of every page their number should be less than ten depending on their names (``id`` property).
 
+[_toc_]
+
 ## Demos
 
 - https://someparts-hugo.netlify.com/
@@ -43,7 +45,7 @@ hugo server --themesDir ../..
 
 Copy the `config.toml` from the [`exampleSite`](https://github.com/tastaturtier/someparts-hugo/tree/master/exampleSite), then edit as desired.
 
-## Elements of the ``someparts-hugo``-theme and how to use it
+## Elements of the ``someparts-hugo``-theme and how to apply them
 
 ### The Collection (``/_index.md``)
 ``_default`` (``list.html``)
