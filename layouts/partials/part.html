@@ -1,0 +1,27 @@
+<h1>{{ .Title | markdownify }}</h1>
+<p><a href="../">{{ .Site.Params.title | markdownify }}</a>, {{ .Params.id | markdownify }}</p>
+<p><em>{{ .Params.subtitle | markdownify }}</em></p>
+<hr/>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-9">
+      {{ with .Params.description }}
+      {{ . | markdownify }}
+      {{ end }}
+      {{ with .Params.link }}
+      <nav class="nav flex-column">       
+        <a href="{{ .url }}"><i class='fa fa-bookmark' aria-hidden='true'></i> {{ .linktext | markdownify }}</a>
+      </nav>
+      {{ end }}
+    </div>
+    {{ with .Params.cover }}
+    <div class="col-sm-3">
+      <p>{{ if .link }}<a href="{{ .link }}">{{ end }}<img src="{{ .img }}" alt="Cover" />{{ if .link }}</a>{{ end }}</p>
+    </div>
+    {{ end }}
+  </div>
+</div>
+{{ if .Content }}
+<hr/>
+{{ end }}
+{{ .Content }}

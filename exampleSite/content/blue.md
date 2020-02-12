@@ -1,9 +1,9 @@
 ---
 type: part
-id: Orange
-weight: 2
-title: Orange -- the color of oranges and peaches
-keywords: orange, peach, orange, tanerine, ...
+id: Blue
+weight: 20
+title: a further title on blue things
+keywords: ink, sky
 description: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.   
 
 
@@ -15,7 +15,7 @@ link:
   url: https://commons.wikimedia.org/wiki/File:Mandarin_Oranges_(Citrus_Reticulata).jpg
   linktext: Foto by Joe Ravi [CC BY-SA (https://creativecommons.org/licenses/by-sa/3.0)]
 cover: 
-    img: orange.jpg
+    img: /orange/orange.jpg
 ---
 
 ## section 1
