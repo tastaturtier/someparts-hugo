@@ -65,8 +65,59 @@ Copy the `config.toml` from the [`exampleSite`](https://github.com/tastaturtier/
 ## Elements of the ``someparts-hugo``-theme and how to apply them
 
 ### The Collection (``/_index.md``)
-``_default`` (``list.html``)
+The collection of all the parts: All parts are presented in menu of the navigation bar at the top. Additionally there is the default home page of the site. It lists all the parts together with their keywords. If you do not provide a custom page for that you simply get the list of parts at the root of your site: ``/index.html`` or just ``/``.
+
+You can provide a custom page that lists all the parts together with their keywords together with a headline and more information that is displayed below the headline and above the list of parts. If you want to provide such a custom page it has to be called ``/_index.md``. This page will be processed with the ``list.html`` template from the ``_default`` type.
+
+The following predefined front matter variables are suported:
+
+- **``title``**: will be displayed as headline
+- **``aliases``** [*optional*] *(format: path)*: different paths to this page (will produce redirects)
+
+- **``date``** [*optional*], ``lastmod``** [*optional*], ``publishDate``** [*optional*] *(format: ``2019-12-31``)*: will be used as the last modification date which is displayed at the bottom of this page. There are rules how the lastmodified date is derived. The rules proposed in the [``exampleSite/config.yaml``](exampleSite/config.yaml) state that if ``date`` metadata is set in front matter this will be the lastmodified date. If it is not provided, then information from the git configuration management system is used instead.
+
+    frontmatter:
+      lastmod: 
+        - date
+        - :git
+
+The content after the front matter will be displayed below the headline and above the automatically generated list of parts.
+
+The following predefined front matter variables are not supported. Please avoid using them in the ``/_index.md`` file.
+
+- **``audio``** 
+- **``cascade``**
+- **``description``**
+- **``draft``**
+- **``expiryDate``**
+- **``headless``**
+- **``images``**
+- **``isCJKLanguage``**
+- **``keywords``**
+- **``layout``**
+- **``linkTitle``**
+- **``markup``**
+- **``slug``**
+- **``type``**
+- **``outputs``**
+- **``resources``**
+- **``series``**
+- **``summary``**
+- **``url``**
+- **``videos``**
+- **``weight``**
+- **``tags``**, **``categories``: tags and categories are currently not supported by the ``someparts-hugo``-theme. 
+
+In order to deactivate tags and categories the following should be included in the ``config.yaml`` (or ``.toml`` or ``.json``) of your site:
+
+    disableKinds:
+    - taxonomy
+    - taxonomyTerm
+    - categories
+
 ### Menu (Drop Down)
+
+
 ### Icon in front of part-elements
 
 The ``someparts-hugo``-Theme is made to present parts of a collection. The [`exampleSite`](https://github.com/tastaturtier/someparts-hugo/tree/master/exampleSite) has some colors as part of a palette. The actual usecase for which ``someparts-hugo`` was made is to [present volumes of a book series](https://verteiltearchitekturen.de/). It would be easy to adapt it to chapters of a book instead.
