@@ -112,10 +112,12 @@ The following predefined front matter variables are not supported. Please avoid 
 
 In order to deactivate tags and categories the following should be included in the ``config.yaml`` (or ``.toml`` or ``.json``) of your site:
 
-    disableKinds:
-    - taxonomy
-    - taxonomyTerm
-    - categories
+```
+disableKinds:
+  - taxonomy
+  - taxonomyTerm
+  - categories
+```
 
 ### Menu (Drop Down)
 
@@ -125,26 +127,28 @@ On the left of the navigation bar is a special item. It displays the text that i
 
 If you want a dropdown menu under it configure it in the ``config.yaml`` (or ``.toml`` or ``.json``) of your site:
 
-    params:
-      dropdown: 
-        - entry1:
-          url: /
-          linktext: Overview
-        - divider2:
-        - entry3:
-          url: https://dama.io/
-          linktext: External Colorist
-        - divider4: 
-        - entry6:
-          url: /imprint/
-          linktext: Imprint
-        - entry7:
-          url: /privacy/
-          linktext: Privacy Policy
-        - divider8:
-        - entry9:
-          url: /index.xml
-          linktext: RSS
+```
+params:
+    dropdown: 
+    - entry1:
+        url: /
+        linktext: Overview
+    - divider2:
+    - entry3:
+        url: https://dama.io/
+        linktext: External Colorist
+    - divider4: 
+    - entry6:
+        url: /imprint/
+        linktext: Imprint
+    - entry7:
+        url: /privacy/
+        linktext: Privacy Policy
+    - divider8:
+    - entry9:
+        url: /index.xml
+        linktext: RSS
+```
 
 The list of entries under dropdown will be used to construct te dropdown menu. Every entry that has no ``url`` or no ``linktext`` will be interpreted as an divider.
 
@@ -206,10 +210,12 @@ The following of the predefined front matter variables are not supported:
 
 In order to deactivate tags and categories the following should be included in the ``config.yaml`` (or ``.toml`` or ``.json``) of your site:
 
-    disableKinds:
-    - taxonomy
-    - taxonomyTerm
-    - categories
+```
+disableKinds:
+  - taxonomy
+  - taxonomyTerm
+  - categories
+```
 
 ### Ressource (e.g. ``/orange/something.md``)
 ``_default`` (``single.html``)
