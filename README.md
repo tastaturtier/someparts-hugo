@@ -75,7 +75,7 @@ The following predefined front matter variables are suported:
 
 - **``title``**: will be displayed as headline
 - **``aliases``** [*optional*] *(format: path)*: different paths to this page (will produce redirects)
-- **``date``** [*optional*], **``lastmod``** [*optional*], **``publishDate``** [*optional*] *(format: ``2019-12-31``)*: will be used as the last modification date which is displayed at the bottom of this page. There are rules how the lastmodified date is derived. The rules proposed in the [``exampleSite/config.yaml``](exampleSite/config.yaml) state that if ``date`` metadata is set in front matter this will be the lastmodified date. If it is not provided, then information from the git configuration management system is used instead.
+- **``date``** [*optional*], **``lastmod``** [*optional*], **``publishDate``** [*optional*] *(format: ``2019-12-31``)*: will be used as the last modification date which is displayed at the bottom of this page. There are [rules how the lastmodified date is derived](https://gohugo.io/getting-started/configuration/#configure-front-matter). The rules proposed in the [``exampleSite/config.yaml``](exampleSite/config.yaml) state that if ``date`` metadata is set in front matter this will be the lastmodified date. If it is not provided, then information from the git configuration management system is used instead.
 
 ```
 frontmatter:
@@ -172,51 +172,56 @@ If ``params.icon`` is not set, then no icon will be displayed in front of each  
 
 ``hugo new --kind part foo`` 
 
-creates a new bundle in the directory ``foo/`` with a ``_index.md`` 
+... creates a new bundle in the directory ``foo/`` with a ``_index.md`` of the ``part`` type.
 
-Parts 
+For parts without resources it makes no difference if it is a single file or if it is put in an otherwise empty bundle (e.g. you can have the same file either as ``/blue.md`` or ``/blue/_index.md`` or ``/blue/index.md`` without any difference in the resulting ``/blue/index.html``).
 
-For parts without resources it makes no difference to put it in an otherwise empty bundle (e.g. you can have the same file either as ``/blue.md`` or ``/blue/_index.md`` or ``/blue/index.md`` without any difference in the resulting ``/blue/index.html``).
-
-This theme presents a collection of some (not too many) parts. Each part has the following meta-data that can be set in the front matter :
+Each part has the following meta-data that can be set in the front matter :
 
 - **``id``**: a short name for this part to be used in the top menu and in the collection's main list view.
 - **``subtitle``** [*optional*]: An optional subtitle that is only displayed on this part's main page.
-- **``cover.img``**: 
-- **``cover.link``** [*optional*] *(format: a URL, can be relative to this part's directory):
-- **``link.url``** [*optional together with link.linktext*] *(format: a URL, can be relative to this part's directory):
-- **``link.linktext``** [*optional together with link.url*] :
+- **``cover.img``**: Path to an image that will be displayed on the right side of this part's page.
+- **``cover.link``** [*optional*]: A URL (relative path from this part's page or an abolute URL) that is used as an href on the cover image that will be displayed on the right side of this part's page.
+- **``link.url``** [*optional together with link.linktext*]: A URL (relative path from this part's page or an abolute URL) that will be used as href for the link shown below the description of the part on this part's page. If ``link.url`` is set ``link.linktext`` has also to be set.
+- **``link.linktext``** [*optional together with link.url*]: Text that will be shown below the description of the part on this part's page. If ``link.linktext`` is set ``link.url`` has also to be set.
 
 The following of the predefined front matter variables are suported:
 
 - **``title``**: The title of the part that is used as the ``<h1>`` element of this part's main page as well as in the collection's main list view.
-- **``aliases``** [*optional*] *(format: path)*: 
-- **``audio``** [*optional*]: 
-- **``cascade``** [*optional*]: 
-- **``date``** [*optional*] *(format: ``2019-12-31``)*:
-- **``description``**: 
-- **``draft``** [*optional*]: 
-- **``expiryDate
-- **``headless
-- **``isCJKLanguage
-- **``keywords``**: 
-- **``lastmod
-- **``publishDate
-- **``slug
-- **``type
-- **``url
+- **``aliases``** [*optional*] *(format: path)*: different paths to this page (will produce redirects)
+- **``description``**: a text that is displayed on the left side on the part's page (left of the cover image).
+- **``keywords``**: will be displayed on the collection's page (the home page) below the link to the part's page.
+- **``type``**: must be ``part``
 - **``weight``**: a number that controls the order of parts in the top menu and in the collection's main list view. *Smaller* weights are *more left* in the menu and *more above* in the collection's main list view.
+- **``date``** [*optional*], **``lastmod``** [*optional*], **``publishDate``** [*optional*] *(format: ``2019-12-31``)*: will be used as the last modification date which is displayed at the bottom of this page. There are [rules how the lastmodified date is derived](https://gohugo.io/getting-started/configuration/#configure-front-matter). The rules proposed in the [``exampleSite/config.yaml``](exampleSite/config.yaml) state that if ``date`` metadata is set in front matter this will be the lastmodified date. If it is not provided, then information from the git configuration management system is used instead.
 
-The following of the predefined front matter variables are not supported:
+```
+frontmatter:
+  lastmod: 
+    - date
+    - :git
+```
 
-- **``images``**: has no effect
-- **``layout``**: has no effect
+The content after the front matter will be displayed below description (left) and cover image (right) of this part's page. If this part has ressources  the automatically generated list of them will be shown below the content.
+
+The following of the predefined front matter variables are not supported and should not be used in the front matter of a part page:
+
+- **``audio``**
+- **``cascade``** 
+- **``draft``** 
+- **``expiryDate``**
+- **``headless``**
+- **``images``**
+- **``isCJKLanguage``**
+- **``layout``**
 - **``linkTitle``**
 - **``markup``**
 - **``outputs``**
 - **``resources``**
 - **``series``**
+- **``slug``**
 - **``summary``**
+- **``url``**
 - **``videos``**
 - **``tags``**, **``categories``: tags and categories are currently not supported by the ``someparts-hugo``-theme. 
 
@@ -229,8 +234,24 @@ disableKinds:
   - categories
 ```
 
-### Ressource (e.g. ``/orange/something.md``)
-``_default`` (``single.html``)
+### Resource (e.g. ``/orange/something.md``)
+All regular pages i.e. pages that are not ``_index.md`` or ``index.md`` (e.g. ``/orange/something.md``) will be rendered using the ``_default`` type ``single.html`` template. Often these are pages that belong to a certain part and are in this sense resources of this part. They work only if the part is represented as a bundle (i.e. a folder containing ``_index.md`` of type ``part``). In that case all resources will be displayed below that parts description on the part's page.
+
+If there is a part called ``foo`` that is a bundle (i.e. ``/foo/_index.md``) you can create resources for the ``foo`` part with the command
+
+```
+hugo new --kind resource foo/bar.md
+```
+
+This makes a new file ``/foo/bar.md``  alongside ``/foo/_index.md``. Further resource pages can be created for the same part:
+
+```
+hugo new --kind resource foo/baz.md
+```
+
+results in the new file ``/foo/baz.md``  alongside ``/foo/_index.md`` and ``/foo/bar.md``. 
+
+There can be other pages that are not resources of a part because they are not part of a bundle (e.g. ``/privacy.md``). A ``weight`` property defined in the front matter of it would then have no effect. 
 
 ## Third party elements and GDPR compliance 
 The ``someparts-hugo``-theme for Hugo uses the following external libraries/components:
