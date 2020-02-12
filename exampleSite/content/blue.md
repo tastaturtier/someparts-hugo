@@ -16,6 +16,7 @@ link:
   linktext: Foto by Joe Ravi [CC BY-SA (https://creativecommons.org/licenses/by-sa/3.0)]
 cover: 
     img: /orange/orange.jpg
+    link: https://commons.wikimedia.org/wiki/File:Mandarin_Oranges_(Citrus_Reticulata).jpg
 ---
 
 ## section 1
