@@ -78,10 +78,12 @@ The following predefined front matter variables are suported:
 
 - **``date``** [*optional*], **``lastmod``** [*optional*], **``publishDate``** [*optional*] *(format: ``2019-12-31``)*: will be used as the last modification date which is displayed at the bottom of this page. There are rules how the lastmodified date is derived. The rules proposed in the [``exampleSite/config.yaml``](exampleSite/config.yaml) state that if ``date`` metadata is set in front matter this will be the lastmodified date. If it is not provided, then information from the git configuration management system is used instead.
 
-    frontmatter:
-      lastmod: 
-        - date
-        - :git
+```
+frontmatter:
+  lastmod: 
+    - date
+    - :git
+```
 
 The content after the front matter will be displayed below the headline and above the automatically generated list of parts.
 
