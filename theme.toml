@@ -7,7 +7,7 @@ licenselink = "https://github.com/tastaturtier/someparts-hugo/blob/master/LICENS
 description = "easy to use Hugo theme to present some (up to 10) parts of a collection"
 homepage = "https://github.com/tastaturtier/someparts-hugo"
 tags = ["Responsive", "Bootstrap", "Fontawesome", "Minimalist", "Simple", "Google Analytics", "Projects", "Product"]
-features = ["Responsive", "Google Analytics", "GDPR Compliance"]
+features = ["Responsive", "Google Analytics", "GDPR Compliance", "Information Architecture"]
 min_version = "0.63.2"
 
 [author]
