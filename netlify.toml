@@ -1,6 +1,6 @@
 [build]
   publish = "exampleSite/public"
-  command = "cd exampleSite && hugo --gc --themesDir ../.."
+  command = "cd exampleSite && sed -i s/https\:\/\/example\.com\//${URL}\//g config.yaml && hugo --gc --themesDir ../.."
   
 [build.environment]
   HUGO_VERSION = "0.63.2"
