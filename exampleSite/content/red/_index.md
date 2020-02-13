@@ -12,5 +12,8 @@ link:
   url: https://commons.wikimedia.org/wiki/File:2013_09_10_Tomate.jpg
   linktext: Foto by Friedrich Haag [CC BY-SA (https://creativecommons.org/licenses/by-sa/4.0)
 cover: 
-    img: ./tomato.jpg
+    img: tomato.jpg
 ---
+*Do not use relative URLs starting with ``/`` in front matter and content because this would not allow a ``baseURL`` with a leading path.*
+
+![cover](tomato.jpg)

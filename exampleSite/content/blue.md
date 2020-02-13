@@ -15,9 +15,12 @@ link:
   url: https://commons.wikimedia.org/wiki/File:Mandarin_Oranges_(Citrus_Reticulata).jpg
   linktext: Foto by Joe Ravi [CC BY-SA (https://creativecommons.org/licenses/by-sa/3.0)]
 cover: 
-    img: /orange/orange.jpg
+    img: ../orange/orange.jpg
     link: https://commons.wikimedia.org/wiki/File:Mandarin_Oranges_(Citrus_Reticulata).jpg
 ---
+*Do not use relative URLs starting with ``/`` in front matter and content because this would not allow a ``baseURL`` with a leading path.*
+
+![cover](../orange/orange.jpg)
 
 ## section 1
 

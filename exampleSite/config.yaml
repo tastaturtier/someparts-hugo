@@ -26,7 +26,7 @@ params:
     allowLabel: Allow
     policy:
       linktext: privacy policy
-      url: /privacy/
+      url: privacy/
   dropdown: 
     - entry1:
       url: /
