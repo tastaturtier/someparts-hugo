@@ -54,16 +54,17 @@ window.addEventListener("load", function(){
 	window.cookieconsent.initialise({
 		"palette": {
 		"popup": { "background": "#000"},
-		"button": { "background": "#f1d600"}
-		},
-		"theme": "classic",
+    "button": { "background": "#007bff"},
+    "highlight": { "background": "#007bff"}
+    },
+  	"theme": "block",
 		"type": "opt-in",
 		"content": {
 		"message": "{{ .Site.Params.cookieconsent.message }}",
 		"deny": "{{ .Site.Params.cookieconsent.denyLabel }}",
 		"allow": "{{ .Site.Params.cookieconsent.allowLabel }}",
 		"link": "{{ .Site.Params.cookieconsent.policy.linktext }}",
-		"href": "{{ .Site.Params.cookieconsent.policy.url }}"
+		"href": "{{ .Site.Params.cookieconsent.policy.url | absURL }}"
 		},
 		onStatusChange: function(status, chosenBefore) {
 		var type = this.options.type;
