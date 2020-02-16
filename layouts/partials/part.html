@@ -1,5 +1,5 @@
 <h1>{{ .Title | markdownify }}</h1>
-<p><a href='{{ "/" | absURL}}'>{{ .Site.Params.title | markdownify }}</a>, {{ .Params.id | markdownify }}</p>
+<p><a href='{{ .Site.BaseURL }}'>{{ .Site.Params.title | markdownify }}</a>, {{ .Params.id | markdownify }}</p>
 <p><em>{{ .Params.subtitle | markdownify }}</em></p>
 <hr/>
 <div class="container">
