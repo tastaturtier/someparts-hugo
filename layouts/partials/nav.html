@@ -27,9 +27,11 @@
       <ul class="navbar-nav">
         {{ $currentPage := . }}
         {{ range (where site.Pages "Type" "in" "part").ByWeight }}
+        {{ if not .Params.private }}
         <li class='nav-item{{ if eq $currentPage.RelPermalink .RelPermalink }} active {{ end }}'>
           <a class="nav-link" href="{{ .Permalink }}">{{ with .Site.Params.Icon }}{{ . | safeHTML }}&nbsp;{{ end }}{{ .Params.id }}</a>
         </li>
+        {{ end }}
         {{ end }}
       </ul>
     </div>

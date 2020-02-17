@@ -179,6 +179,7 @@ For parts without resources it makes no difference if it is a single file or if 
 Each part has the following meta-data that can be set in the front matter :
 
 - **``id``**: a short name for this part to be used in the top menu and in the collection's main list view.
+- **``private``** [*optional*]: if ``true`` the part *will not be* displayed on navbar, homepage, sitemap, and RSS. If ``false`` or not set the part *will* be included in navbar, homepage, sitemap, and RSS.
 - **``subtitle``** [*optional*]: An optional subtitle that is only displayed on this part's main page.
 - **``cover.img``**: Path to an image that will be displayed on the right side of this part's page.
 - **``cover.link``** [*optional*]: A URL (relative path from this part's page or an abolute URL) that is used as an href on the cover image that will be displayed on the right side of this part's page.

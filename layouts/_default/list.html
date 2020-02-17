@@ -7,11 +7,13 @@
   {{ .Content }}
 </div>
 {{ range .Pages.ByWeight }}
+{{ if not .Params.private }}
 {{ if .Params.id}}
   <a class="nav-link" href="{{ .Permalink }}">{{ with .Site.Params.Icon }}{{ . | safeHTML }} {{ end }}<b>{{ .Params.id | markdownify }}: {{ .Title | markdownify }}</b></a>
     {{ with .Params.keywords }}
     <div class="nav-link"><em>{{ range . }}{{ . }} {{ end }}</em></div>
     {{ end }}
+{{ end }}
 {{ end }}
 {{ end }}
 {{- end -}}
