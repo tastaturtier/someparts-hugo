@@ -131,7 +131,7 @@ If you want a dropdown menu under it configure it in the ``config.yaml`` (or ``.
 params:
     dropdown: 
     - entry1:
-        url: /
+        url: index.html
         linktext: Overview
     - divider2:
     - entry3:
@@ -139,14 +139,14 @@ params:
         linktext: External Colorist
     - divider4: 
     - entry6:
-        url: /imprint/
+        url: imprint/
         linktext: Imprint
     - entry7:
-        url: /privacy/
+        url: privacy/
         linktext: Privacy Policy
     - divider8:
     - entry9:
-        url: /index.xml
+        url: index.xml
         linktext: RSS
 ```
 
